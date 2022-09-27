@@ -16,15 +16,16 @@
 
             $preguntas = $_SESSION["preguntas"];
             
+            $i = 0;
         ?>
     
         <h3>
-            <?= $_SESSION["preguntas" [0]]; ?>
+            <?= $_SESSION["preguntas"]; ?>
             
         </h3>
         <hr>
+
         <?php    
-            $i = 0;
             foreach ($preguntas->answers as $answer){
             $i++;
         ?>

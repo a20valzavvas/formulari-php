@@ -12,16 +12,19 @@
     <h1><a href="index.php"> Quizz Game </a></h1>
     <div>
         <?php
-    
+            session_start();
+
             $data = file_get_contents("quizz.json");
             $quizz = json_decode($data);
     
-            // session_start();
     
             $index = 0;
-            $preguntas = $quizz;
+            $preguntas = $quizz->questions;
             $success = 0;
     
+            // for($i=0; $i<5; $i++){
+
+            // }
     
             $_SESSION["index"] = $index;
             $_SESSION["preguntas"] = $preguntas;
