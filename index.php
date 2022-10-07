@@ -17,9 +17,22 @@
             $data = file_get_contents("quizz.json");
             $quizz = json_decode($data);
     
-    
+            $array = array();
+
+            for ($i=0; $i < 10 ; $i++) { 
+                $n = rand(0, 9);
+                if (in_array($n, $array)) {
+                    $i--;
+                }else{
+                    array_push($array, $n);
+                    //Mostrar preguntas
+                    
+                }
+                
+            }
+            $_SESSION["array"] = $array;
             $index = 0;
-            $preguntas = $quizz->questions;
+            $preguntas = $quizz;
             $success = 0;
     
             // for($i=0; $i<5; $i++){

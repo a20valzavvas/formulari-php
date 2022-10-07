@@ -12,37 +12,45 @@
     <h1><a href="index.php"> Quizz Game </a></h1>  <hr>
     <div class="div_questions">
         <?php
+            $data = file_get_contents("quizz.json");
+            $quizz = json_decode($data);
             session_start();
-
-            $preguntas = $_SESSION["preguntas"];
+            $array=$_SESSION["array"];
+            $k++;
+            echo ($i+1).'. '. $quizz[$array[$k]]->question. '<br>';
+                    
+            echo  $quizz[$array[$k]]->answers[$j]. '<br>';
             
-            $i = 0;
+            echo '<br>';
+
+
+
         ?>
     
         <h3>
-            <?= $_SESSION["preguntas"]; ?>
+             <!-- $_SESSION["preguntas"];  -->
             
         </h3>
         <hr>
 
         <?php    
-            foreach ($preguntas->answers as $answer){
-            $i++;
+            // foreach ($preguntas->answers as $answer){
+            // $i++;
         ?>
-                <form action="valida.php" method="get">               
+                <!-- <form action="valida.php" method="get">                -->
                 <!-- <input type="text" name="id_question" value=""> -->
                 <!-- ?php             
                     $i = 0;
                     foreach ($dataRand->answers as $key => $answer) {
                     $i++;  ?>-->
                 <!-- <input type="hidden" name="id_answer" value=" $i - 1; ?>"></input> -->
-                <?= $answer; ?>
-                <input name="answer" type='radio' value='key> '><br><br></input>
+                <!-- $answer; ?> -->
+                <!-- <input name="answer" type='radio' value='key> '><br><br></input> -->
                 <!-- <label for="html">  </label> <br><br> -->
-            <?php } ?> 
-                <input type="submit" value="Enviar"></input>
-            </form>
-    </div>
+            <!-- < } ?>  -->
+                <!-- <input type="submit" value="Enviar"></input> -->
+            <!-- </form> -->
+    <!-- </div> -->
         <hr>
 </body>
 </html>
